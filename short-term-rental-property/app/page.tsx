@@ -48,7 +48,7 @@ export default function Home() {
                   className="mt-8 inline-flex items-center gap-2 bg-ivory px-5 py-3 text-sm font-medium text-ink transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   <CalendarIcon className="size-4" />
-                  Check availability
+                  Request to book
                 </a>
               </div>
             </div>

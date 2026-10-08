@@ -65,7 +65,7 @@ export const property = {
   },
   booking: {
     title: "Request to book",
-    body: "Pick your dates and send a request — the host will confirm availability within 24 hours. No payment is taken here.",
+    body: "Confirm the dates you want on the calendar and send a request — the host will confirm availability within 24 hours. No payment is taken here.",
     namePlaceholder: "Jane Smith",
     emailPlaceholder: "jane@example.com",
     messagePlaceholder: "Anything we should know about your stay?",

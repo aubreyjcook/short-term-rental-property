@@ -17,10 +17,10 @@ export function ContactForm() {
         className="flex min-h-64 flex-col justify-center rounded-md border border-line bg-white px-6 py-10"
         role="status"
       >
-        <p className="text-xs font-medium tracking-[0.16em] text-bronze uppercase">
-          Message sent
+        <p className="text-sm font-semibold text-pine">Message sent</p>
+        <p className="mt-2 font-serif text-3xl font-semibold text-ink">
+          We’re happy to help.
         </p>
-        <p className="mt-3 font-serif text-3xl text-ink">We’re happy to help.</p>
         <p className="mt-3 text-sm leading-6 text-muted">
           Questions about the property, the area, or your dates will reach the
           host at {property.email}.
@@ -38,7 +38,7 @@ export function ContactForm() {
 
   return (
     <form className="grid gap-4" onSubmit={onSubmit}>
-      <label className="flex flex-col gap-1.5 text-xs font-medium tracking-[0.08em] text-muted uppercase">
+      <label className="flex flex-col gap-1.5 text-sm font-medium text-ink">
         Email
         <input
           className="field bg-white"
@@ -49,7 +49,7 @@ export function ContactForm() {
           placeholder={property.contact.emailPlaceholder}
         />
       </label>
-      <label className="flex flex-col gap-1.5 text-xs font-medium tracking-[0.08em] text-muted uppercase">
+      <label className="flex flex-col gap-1.5 text-sm font-medium text-ink">
         Message
         <textarea
           className="field min-h-32 resize-y bg-white"
@@ -61,7 +61,7 @@ export function ContactForm() {
       </label>
       <button
         type="submit"
-        className="inline-flex items-center justify-center bg-pine px-6 py-3 text-sm font-medium text-ivory transition-colors hover:bg-pine-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine"
+        className="inline-flex items-center justify-center rounded-lg bg-pine px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-pine-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine"
       >
         {property.contact.submit}
       </button>

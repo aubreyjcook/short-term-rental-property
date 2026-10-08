@@ -12,24 +12,18 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-linen/90 backdrop-blur-md">
-      <div className="h-1 bg-pine" />
+    <header className="sticky top-0 z-50 border-b border-line bg-white">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a href="#top" className="flex items-center gap-2.5 text-ink">
-          <span className="grid size-8 place-items-center bg-pine font-serif text-sm text-ivory">
-            L
-          </span>
-          <span className="font-serif text-lg tracking-tight">
-            {property.name}
-          </span>
+        <a href="#top" className="font-serif text-xl font-semibold text-ink">
+          {property.name}
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
           {property.nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-muted transition-colors hover:text-ink"
+              className="text-sm text-ink/80 transition-colors hover:text-ink"
             >
               {item.label}
             </a>
@@ -39,7 +33,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <a
             href="#book"
-            className="inline-flex items-center justify-center bg-pine px-3.5 py-2 text-sm font-medium text-ivory transition-colors hover:bg-pine-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine sm:px-4"
+            className="inline-flex items-center justify-center rounded-lg bg-pine px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-pine-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine sm:px-4"
           >
             <span className="sm:hidden">Book</span>
             <span className="hidden sm:inline">Request to book</span>
@@ -64,7 +58,7 @@ export function SiteHeader() {
       {open ? (
         <nav
           id="mobile-nav"
-          className="border-t border-line bg-linen px-5 py-3 md:hidden"
+          className="border-t border-line bg-white px-5 py-2 md:hidden"
           aria-label="Primary"
         >
           <ul className="flex flex-col">

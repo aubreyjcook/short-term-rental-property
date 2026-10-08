@@ -135,10 +135,8 @@ export function BookingForm() {
         className="flex min-h-80 flex-col items-start justify-center rounded-md border border-line bg-linen px-6 py-10"
         role="status"
       >
-        <p className="text-xs font-medium tracking-[0.16em] text-bronze uppercase">
-          Request received
-        </p>
-        <p className="mt-3 font-serif text-3xl text-ink">
+        <p className="text-sm font-semibold text-pine">Request received</p>
+        <p className="mt-2 font-serif text-3xl font-semibold text-ink">
           We’ll confirm within 24 hours.
         </p>
         <p className="mt-3 max-w-sm text-sm leading-6 text-muted">
@@ -171,13 +169,13 @@ export function BookingForm() {
     <form className="grid gap-5" onSubmit={onSubmit}>
       <div>
         <div className="flex items-center justify-between gap-3">
-          <p className="font-serif text-2xl text-ink">
+          <p className="font-serif text-2xl font-semibold text-ink">
             {MONTHS[monthNumber - 1]} {year}
           </p>
           <div className="flex gap-2">
             <button
               type="button"
-              className="grid size-9 place-items-center border border-line text-ink transition-colors hover:border-pine disabled:cursor-not-allowed disabled:opacity-30"
+              className="grid size-9 place-items-center rounded-lg border border-line text-ink transition-colors hover:border-pine disabled:cursor-not-allowed disabled:opacity-30"
               onClick={() => setMonthOverride(shiftMonth(month, -1))}
               disabled={!canGoBack}
               aria-label="Previous month"
@@ -186,7 +184,7 @@ export function BookingForm() {
             </button>
             <button
               type="button"
-              className="grid size-9 place-items-center border border-line text-ink transition-colors hover:border-pine"
+              className="grid size-9 place-items-center rounded-lg border border-line text-ink transition-colors hover:border-pine"
               onClick={() => setMonthOverride(shiftMonth(month, 1))}
               aria-label="Next month"
             >
@@ -195,7 +193,7 @@ export function BookingForm() {
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-7 text-center text-[11px] font-medium tracking-[0.12em] text-muted uppercase">
+        <div className="mt-4 grid grid-cols-7 text-center text-xs font-medium text-muted">
           {WEEKDAYS.map((day) => (
             <div key={day} className="py-1">
               {day}
@@ -245,20 +243,16 @@ export function BookingForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-px overflow-hidden border border-line bg-line">
+      <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line">
         <div className="bg-linen px-4 py-3">
-          <p className="text-[11px] font-medium tracking-[0.14em] text-bronze uppercase">
-            Check-in
-          </p>
-          <p className="mt-1 text-sm font-medium text-ink">
+          <p className="text-sm text-muted">Check-in</p>
+          <p className="mt-0.5 text-sm font-semibold text-ink">
             {checkIn ? formatDate(checkIn) : "Select a date"}
           </p>
         </div>
         <div className="bg-linen px-4 py-3">
-          <p className="text-[11px] font-medium tracking-[0.14em] text-bronze uppercase">
-            Check-out
-          </p>
-          <p className="mt-1 text-sm font-medium text-ink">
+          <p className="text-sm text-muted">Check-out</p>
+          <p className="mt-0.5 text-sm font-semibold text-ink">
             {checkOut ? formatDate(checkOut) : "Select a date"}
           </p>
         </div>
@@ -268,7 +262,7 @@ export function BookingForm() {
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="flex flex-col gap-1.5 text-xs font-medium tracking-[0.08em] text-muted uppercase">
+        <label className="flex flex-col gap-1.5 text-sm font-medium text-ink">
           Guests
           <select className="field field-select" name="guests" defaultValue="2">
             {Array.from({ length: property.booking.maxGuests }, (_, index) => {
@@ -281,7 +275,7 @@ export function BookingForm() {
             })}
           </select>
         </label>
-        <label className="flex flex-col gap-1.5 text-xs font-medium tracking-[0.08em] text-muted uppercase">
+        <label className="flex flex-col gap-1.5 text-sm font-medium text-ink">
           Your name
           <input
             className="field"
@@ -292,7 +286,7 @@ export function BookingForm() {
             placeholder={property.booking.namePlaceholder}
           />
         </label>
-        <label className="flex flex-col gap-1.5 text-xs font-medium tracking-[0.08em] text-muted uppercase sm:col-span-2">
+        <label className="flex flex-col gap-1.5 text-sm font-medium text-ink sm:col-span-2">
           Email
           <input
             className="field"
@@ -303,7 +297,7 @@ export function BookingForm() {
             placeholder={property.booking.emailPlaceholder}
           />
         </label>
-        <label className="flex flex-col gap-1.5 text-xs font-medium tracking-[0.08em] text-muted uppercase sm:col-span-2">
+        <label className="flex flex-col gap-1.5 text-sm font-medium text-ink sm:col-span-2">
           Message (optional)
           <textarea
             className="field min-h-24 resize-y"
@@ -322,7 +316,7 @@ export function BookingForm() {
 
       <button
         type="submit"
-        className="inline-flex items-center justify-center bg-pine px-6 py-3 text-sm font-medium text-ivory transition-colors hover:bg-pine-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine"
+        className="inline-flex items-center justify-center rounded-lg bg-pine px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-pine-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine"
       >
         {property.booking.submit}
       </button>
